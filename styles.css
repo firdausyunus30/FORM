@@ -163,52 +163,55 @@ input:focus, textarea:focus { border-color: var(--gold); background: rgba(201, 1
   .rental-table { min-width: 0; }
   .rental-table thead { display: none; }
   .rental-table tbody, .rental-table tbody tr { display: block; }
-  .rental-table tbody tr { padding: 8px 11px 10px; }
-  .rental-table tbody th { display: block; padding: 0 0 4px; border-right: 0; }
-  .rental-table tbody td { display: inline-grid; grid-template-columns: auto minmax(0, 1fr); align-items: center; width: 49%; padding: 3px 0; border: 0; vertical-align: middle; }
-  .rental-table tbody td::before { margin-right: 6px; color: var(--ink-muted); font-size: 0.68rem; font-weight: 700; text-transform: uppercase; }
-  .rental-table tbody td:nth-child(2)::before { content: 'Qty'; }
-  .rental-table tbody td:nth-child(3)::before { content: 'RM/unit'; }
-  .rental-table tbody td:nth-child(4) { display: flex; justify-content: flex-end; width: 100%; padding-top: 7px; color: var(--ink-soft); }
-  .rental-table tbody td:nth-child(4)::before { content: 'Jumlah'; margin-right: auto; }
+  .rental-table tbody tr { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; margin-bottom: 9px; padding: 11px 12px 12px; border: 1px solid rgba(175, 157, 136, 0.3); border-radius: 12px; }
+  .rental-table tbody th { display: block; grid-column: 1 / -1; padding: 0 0 7px; border-right: 0; }
+  .rental-table tbody td { display: block; width: auto; padding: 3px 0; border: 0; }
+  .rental-table tbody td::before { display: block; margin-bottom: 2px; color: var(--ink-muted); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; }
+  .rental-table tbody td:nth-child(2)::before { content: 'Kuantiti'; }
+  .rental-table tbody td:nth-child(3)::before { content: 'Harga / unit (RM)'; }
+  .rental-table tbody td:nth-child(4) { display: flex; grid-column: 1 / -1; justify-content: space-between; width: auto; margin-top: 5px; padding-top: 8px; border-top: 1px solid rgba(175, 157, 136, 0.35); color: var(--ink-soft); }
+  .rental-table tbody td:nth-child(4)::before { content: 'Jumlah'; }
+  .rental-table tbody td:nth-child(4)::before { margin: 0; }
 }
 
 @media print {
   @page { size: A4 portrait; margin: 0; }
   html, body { background: var(--ink); }
   body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
-  .page-shell { width: 210mm; min-height: 297mm; padding: 11mm 12mm 7mm; }
+  .page-shell { width: 210mm; min-height: 297mm; padding: 5mm 10mm 3mm; }
   .brand-header { color: var(--gold-light); }
-  .header-rule { margin: 4mm 0 6mm; }
-  .intro { margin-bottom: 5mm; }
-  .intro h1 { font-size: 25pt; }
-  .intro > p:last-child { margin-top: 2mm; font-size: 9pt; }
+  .brand-name { font-size: 12pt; }
+  .brand-meta { font-size: 6.5pt; }
+  .header-rule { height: 1px; margin: 2mm 0 3mm; }
+  .intro { margin-bottom: 2.5mm; }
+  .intro h1 { font-size: 21pt; }
+  .intro > p:last-child { margin-top: 1mm; font-size: 7pt; }
   .eyebrow { display: none; }
-  .form-card { padding: 8mm 9mm; border-radius: 6mm; box-shadow: none; }
-  .section-block + .section-block { margin-top: 6mm; }
-  .field-grid { gap: 3.7mm 10mm; }
-  .field.full-width { margin-bottom: 3.7mm; }
-  .field input { margin-top: 1mm; padding: 1mm 0 1.5mm; font-size: 9pt; }
-  label, .payment-line > span { font-size: 7pt; }
-  h2 { font-size: 10pt; }
-  .section-heading-row { margin-bottom: 2mm; }
-  .section-hint, .deposit-note, .form-note { font-size: 7pt; }
-  .rental-table { font-size: 8pt; }
-  .rental-table th, .rental-table td { padding: 1.6mm 2.5mm; }
-  .rental-table thead th { font-size: 7pt; }
-  .rental-table input { font-size: 8pt; }
-  .payment-summary { margin-top: 3mm; }
-  .payment-line { min-height: 7.5mm; }
-  .payment-line label, .payment-line > span, .payment-line output { font-size: 8pt; }
-  .money-input { min-width: 34mm; }
-  .money-input input { font-size: 8pt; }
+  .form-card { padding: 4.5mm 7mm; border-radius: 5mm; box-shadow: none; }
+  .section-block + .section-block { margin-top: 3.5mm; }
+  .field-grid { gap: 1.8mm 8mm; }
+  .field.full-width { margin-bottom: 1.8mm; }
+  .field input { margin-top: 0.5mm; padding: 0.7mm 0 0.9mm; font-size: 7.5pt; }
+  label, .payment-line > span { font-size: 6pt; }
+  h2 { font-size: 8.5pt; }
+  .section-heading-row { margin-bottom: 1mm; }
+  .section-hint, .deposit-note, .form-note { font-size: 6pt; }
+  .rental-table { font-size: 7pt; }
+  .rental-table th, .rental-table td { padding: 1mm 1.8mm; }
+  .rental-table thead th { font-size: 6pt; }
+  .rental-table input { font-size: 7pt; }
+  .payment-summary { margin-top: 1.5mm; }
+  .payment-line { min-height: 5.2mm; }
+  .payment-line label, .payment-line > span, .payment-line output { font-size: 7pt; }
+  .money-input { min-width: 29mm; }
+  .money-input input { font-size: 7pt; }
   .delivery-list { gap: 0; }
-  .delivery-item { min-height: 7.3mm; grid-template-columns: 9mm 1fr; }
-  .delivery-item span { font-size: 8pt; }
-  .delivery-item input { padding: 1mm 0; font-size: 8pt; }
-  .note-box { margin-top: 4mm; padding: 2mm 3mm; }
-  .note-box textarea { font-size: 8pt; }
-  .form-note { margin-top: 3mm; padding: 2.7mm 3mm; }
-  .page-footer { margin-top: 4mm; font-size: 7pt; }
+  .delivery-item { min-height: 5.5mm; grid-template-columns: 8mm 1fr; }
+  .delivery-item span { font-size: 7pt; }
+  .delivery-item input { padding: 0.7mm 0; font-size: 7pt; }
+  .note-box { margin-top: 2mm; padding: 1.5mm 2mm; }
+  .note-box textarea { font-size: 7pt; }
+  .form-note { margin-top: 1.5mm; padding: 1.5mm 2mm; }
+  .page-footer { margin-top: 2mm; font-size: 6pt; }
   .action-bar, .screen-tip { display: none; }
 }
