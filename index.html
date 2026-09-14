@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#2d1715" />
+    <meta name="description" content="Borang butiran tempahan Azys Flora yang boleh diisi melalui telefon dan dicetak dalam format A4." />
+    <title>Borang Butiran Tempahan · Azys Flora</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="brand-header" aria-label="Maklumat perniagaan">
+        <div class="brand-name">AZYS FLORA</div>
+        <div class="brand-meta">DULANG HANTARAN <span aria-hidden="true">•</span> RENTAL COLLECTION</div>
+      </header>
+
+      <div class="header-rule" aria-hidden="true"></div>
+
+      <section class="intro" aria-labelledby="form-title">
+        <p class="eyebrow">Borang tempahan</p>
+        <h1 id="form-title">BORANG BUTIRAN TEMPAHAN</h1>
+        <p>Lengkapkan butiran berikut untuk semakan dan pengesahan tempahan.</p>
+      </section>
+
+      <form class="form-card" id="booking-form">
+        <section class="section-block customer-section" aria-labelledby="customer-heading">
+          <h2 class="sr-only" id="customer-heading">Butiran penyewa dan majlis</h2>
+
+          <div class="field full-width">
+            <label for="renter-name">Nama penyewa</label>
+            <input id="renter-name" name="renter-name" type="text" autocomplete="name" placeholder="Nama penuh" />
+          </div>
+
+          <div class="field-grid two-columns">
+            <div class="field">
+              <label for="phone">No. telefon</label>
+              <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="01X-XXXXXXX" inputmode="tel" />
+            </div>
+            <div class="field">
+              <label for="event-date">Tarikh majlis</label>
+              <input id="event-date" name="event-date" type="date" />
+            </div>
+            <div class="field">
+              <label for="pickup-date">Tarikh pickup</label>
+              <input id="pickup-date" name="pickup-date" type="date" />
+            </div>
+            <div class="field">
+              <label for="return-date">Tarikh return</label>
+              <input id="return-date" name="return-date" type="date" />
+            </div>
+          </div>
+
+          <div class="field full-width">
+            <label for="flower-theme">Tema / warna bunga</label>
+            <input id="flower-theme" name="flower-theme" type="text" placeholder="Contoh: Dusty blue & putih" />
+          </div>
+        </section>
+
+        <section class="section-block rental-section" aria-labelledby="rental-heading">
+          <div class="section-heading-row">
+            <h2 id="rental-heading">Pilihan dulang</h2>
+            <span class="section-hint">Isi kuantiti dan harga untuk kira jumlah</span>
+          </div>
+
+          <div class="rental-table-wrap">
+            <table class="rental-table">
+              <thead>
+                <tr>
+                  <th scope="col">Jenis dulang</th>
+                  <th scope="col">Kuantiti</th>
+                  <th scope="col">Harga/unit</th>
+                  <th scope="col">Jumlah</th>
+                </tr>
+              </thead>
+              <tbody id="rental-rows">
+                <tr>
+                  <th scope="row"><input class="item-name" type="text" value="Dulang Kerawang" aria-label="Nama dulang 1" /></th>
+                  <td><input class="quantity" type="number" min="0" step="1" value="" placeholder="0" aria-label="Kuantiti dulang 1" /></td>
+                  <td><input class="unit-price" type="number" min="0" step="0.01" value="" placeholder="0.00" aria-label="Harga seunit dulang 1" /></td>
+                  <td class="row-total" data-label="Jumlah">RM0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row"><input class="item-name" type="text" value="Dulang Hitam" aria-label="Nama dulang 2" /></th>
+                  <td><input class="quantity" type="number" min="0" step="1" value="" placeholder="0" aria-label="Kuantiti dulang 2" /></td>
+                  <td><input class="unit-price" type="number" min="0" step="0.01" value="" placeholder="0.00" aria-label="Harga seunit dulang 2" /></td>
+                  <td class="row-total" data-label="Jumlah">RM0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row"><input class="item-name" type="text" value="Dulang Net Gold" aria-label="Nama dulang 3" /></th>
+                  <td><input class="quantity" type="number" min="0" step="1" value="" placeholder="0" aria-label="Kuantiti dulang 3" /></td>
+                  <td><input class="unit-price" type="number" min="0" step="0.01" value="" placeholder="0.00" aria-label="Harga seunit dulang 3" /></td>
+                  <td class="row-total" data-label="Jumlah">RM0.00</td>
+                </tr>
+                <tr>
+                  <th scope="row"><input class="item-name" type="text" value="Dulang Net Hitam" aria-label="Nama dulang 4" /></th>
+                  <td><input class="quantity" type="number" min="0" step="1" value="" placeholder="0" aria-label="Kuantiti dulang 4" /></td>
+                  <td><input class="unit-price" type="number" min="0" step="0.01" value="" placeholder="0.00" aria-label="Harga seunit dulang 4" /></td>
+                  <td class="row-total" data-label="Jumlah">RM0.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="deposit-note">Deposit booking: <strong>RM50</strong> <span>•</span> Harga sewaan boleh diselaraskan mengikut pilihan.</p>
+
+          <div class="payment-summary" aria-label="Ringkasan bayaran">
+            <div class="payment-line">
+              <label for="booking-deposit">Deposit booking</label>
+              <div class="money-input"><span>RM</span><input id="booking-deposit" type="number" min="0" step="0.01" value="50" aria-label="Deposit booking" /></div>
+            </div>
+            <div class="payment-line">
+              <label for="security-deposit">Security deposit</label>
+              <div class="money-input"><span>RM</span><input id="security-deposit" type="number" min="0" step="0.01" placeholder="0.00" aria-label="Security deposit" /></div>
+            </div>
+            <div class="payment-line">
+              <span>Baki bayaran</span>
+              <output id="balance-due" aria-live="polite">RM0.00</output>
+            </div>
+            <div class="payment-line grand-total">
+              <span>Jumlah</span>
+              <output id="grand-total" aria-live="polite">RM0.00</output>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-block delivery-section" aria-labelledby="delivery-heading">
+          <div class="section-heading-row">
+            <h2 id="delivery-heading">Senarai barang hantaran</h2>
+            <span class="section-hint">Sila nyatakan barang yang akan digubah</span>
+          </div>
+          <div class="delivery-list">
+            <label class="delivery-item"><span>01</span><input type="text" aria-label="Barang hantaran 1" /></label>
+            <label class="delivery-item"><span>02</span><input type="text" aria-label="Barang hantaran 2" /></label>
+            <label class="delivery-item"><span>03</span><input type="text" aria-label="Barang hantaran 3" /></label>
+            <label class="delivery-item"><span>04</span><input type="text" aria-label="Barang hantaran 4" /></label>
+            <label class="delivery-item"><span>05</span><input type="text" aria-label="Barang hantaran 5" /></label>
+            <label class="delivery-item"><span>06</span><input type="text" aria-label="Barang hantaran 6" /></label>
+          </div>
+        </section>
+
+        <div class="note-box">
+          <label for="extra-note">Nota tambahan</label>
+          <textarea id="extra-note" name="extra-note" rows="2" placeholder="Contoh: Lokasi pickup, permintaan khas atau nota lain"></textarea>
+        </div>
+
+        <p class="form-note">Nota: Harga sewaan dan baki pembayaran akan dimuktamadkan selepas pilihan dulang, kuantiti dan tema disahkan.</p>
+      </form>
+
+      <footer class="page-footer">
+        <span>AZYS FLORA</span>
+        <span aria-hidden="true">•</span>
+        <span>01</span>
+      </footer>
+
+      <div class="action-bar" aria-label="Tindakan borang">
+        <button class="button secondary-button" type="button" id="reset-form">Kosongkan</button>
+        <button class="button primary-button" type="button" id="print-form"><span aria-hidden="true">⌁</span> Cetak A4</button>
+      </div>
+      <p class="screen-tip">Tip: Isi borang melalui telefon, kemudian tekan <strong>Cetak A4</strong> untuk simpan PDF atau terus cetak.</p>
+    </main>
+  </body>
+</html>
